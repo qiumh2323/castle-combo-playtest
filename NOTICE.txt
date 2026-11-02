@@ -4,6 +4,9 @@ Rules adaptation: Romain Fromi / Game Park; package declares ISC license.
 Source: https://github.com/gamepark/chateau-combo
 Pinned commit: c903ecc19f2d5eeeada8228cf98bb1eb37e01ffd
 Vendor rules are preserved from that source. Local-only adaptation, not an official product.
+Local rules patch (2026-11-02): DealCardsHelper now completes both markets before
+emitting one continuation, and resumes refill sequentially after a shuffle.
+This prevents duplicate turn/endgame settlement. Not an upstream-certified fix.
 
 ISC License
 
