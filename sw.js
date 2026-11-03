@@ -2,7 +2,7 @@
 const PREFIX='castle-assets-'+new URL(self.registration.scope).pathname.replace(/[^a-z0-9]/gi,'_')+'-';
 const CACHE=PREFIX+'v1';
 const inFlight=new Map();
-function assetKey(value){const url=new URL(value,self.registration.scope),base=new URL('assets/',self.registration.scope);if(url.origin!==base.origin||!url.pathname.startsWith(base.pathname))return null;if(!/\.(jpg|png|svg)$/i.test(url.pathname)&&!/\/champion-r\d+\.json$/.test(url.pathname))return null;url.search='';url.hash='';return url.href;}
+function assetKey(value){const url=new URL(value,self.registration.scope),base=new URL('assets/',self.registration.scope);if(url.origin!==base.origin||!url.pathname.startsWith(base.pathname))return null;if(!/\.(jpg|png|svg)$/i.test(url.pathname)&&!/\/champion-r\d+(?:-x2-r\d+)?\.json$/.test(url.pathname))return null;url.search='';url.hash='';return url.href;}
 async function cachedAsset(url){
  const cache=await caches.open(CACHE),hit=await cache.match(url);if(hit)return hit;
  if(!inFlight.has(url))inFlight.set(url,(async()=>{const response=await fetch(url);if(response.ok&&response.type!=='opaque')await cache.put(url,response.clone());return response;})().finally(()=>inFlight.delete(url)));
