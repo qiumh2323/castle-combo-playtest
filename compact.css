@@ -1,4 +1,5 @@
 /* Familiar layout, paired markets and the right-hand resource dock. */
+.ai-thinking{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:12px;color:#665076}.ai-thinking[hidden]{display:none}.ai-thinking progress{width:100%;min-width:0;height:7px;accent-color:#806395}.ai-thinking span{flex:none;font-variant-numeric:tabular-nums}
 .dock-shields{grid-area:shields;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;padding:5px 0 2px}.shield-count{display:flex;align-items:center;justify-content:center;gap:3px;min-width:0}.shield-count img{width:22px;height:26px;object-fit:contain}.shield-count strong{font-size:14px;font-variant-numeric:tabular-nums}.shield-count.empty{opacity:.5}
 @media(max-width:760px){.dock-shields{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:6px}.shield-count img{width:19px;height:23px}.shield-count strong{font-size:13px}}
 body.playing .site-header{height:62px}.playing .site-header .brand{font-size:17px}.playing .site-header .brand img{width:33px}.playing main{max-width:1500px;padding:18px 24px 28px}.playing footer{display:none}
