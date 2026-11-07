@@ -1,6 +1,8 @@
 {
-  "version": "V1.1",
-  "training_generation": 144,
-  "model": "assets/champion-r76-x2-r144.json",
-  "sha256": "a50bd00186d1e752891f9890e1973f951a75c396de9feb452dc2ceba9a4ecc47"
+  "version": "V1.2",
+  "training_generation": 14,
+  "migration_base_generation": 144,
+  "verified": false,
+  "model": "assets/champion-r144-rel-r0014.json",
+  "sha256": "768896966ff996261db01e2f690e8b82d838ccf37fb0319455c30fc6bc79cd49"
 }
