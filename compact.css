@@ -53,6 +53,7 @@ body.playing .site-header{height:62px}.playing .site-header .brand{font-size:17p
 .recent-placement{position:relative}
 .recent-placement>.card{outline:1px solid #755497;outline-offset:1px}
 .recent-placement-tag{position:absolute;top:-6px;right:0;z-index:1;padding:1px 5px;border-radius:4px;background:#624681;color:#fff;font-size:10px;font-weight:700;pointer-events:none}
+.game-layout>aside>.history{min-width:0;box-sizing:border-box;background:#fff;border:1px solid var(--border);border-top:3px solid #87749d;border-radius:11px;padding:12px 15px 14px}
 .history>summary{font-size:15px;color:var(--ink)}
 #history{box-sizing:border-box;max-height:224px;overflow:auto;overscroll-behavior:contain;padding:0;margin:9px 0 0;list-style:none;border:1px solid #ded7e7;border-radius:7px;background:#fff}
 #history:focus-visible{outline:2px solid #755497;outline-offset:2px}
