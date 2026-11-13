@@ -50,6 +50,19 @@ body.playing .site-header{height:62px}.playing .site-header .brand{font-size:17p
 .recruit-choices{border:0;padding:0;margin:12px 0 8px;min-width:0}.recruit-choices legend{font-size:12px;color:#6e617e;padding:0;margin-bottom:6px}.recruit-choice{display:flex;gap:8px;align-items:flex-start;margin:6px 0;padding:8px;border:1px solid #ddd5e6;border-radius:6px;font-size:12px;line-height:1.7;cursor:pointer}.recruit-choice input{margin:4px 0 0;flex:none;accent-color:#66507d}.recruit-choice:has(input:checked){background:#eee8f5;border-color:#8d74aa}.refresh-dialog{width:440px}.refresh-dialog h2{font-size:21px}.refresh-dialog p{line-height:1.8;color:#775c45}.refresh-dialog .result-buttons{justify-content:flex-end}.refresh-dialog .primary{background:#835d32;border-color:#835d32}
 .grid .grid-slot:has(.placement-preview){position:relative;overflow:hidden;padding:0}.grid .placement-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.58;pointer-events:none}
 .recruit-flight{position:fixed;z-index:1000;pointer-events:none;object-fit:contain;transform-origin:top left;border-radius:7px;filter:drop-shadow(0 8px 12px #25324844)}
-.dock-last-recruit{display:flex;align-items:baseline;gap:8px;margin:4px 0 8px;font-size:13px;color:var(--muted)}
-.dock-last-recruit strong{color:var(--ink)}
+.recent-placement{position:relative}
+.recent-placement>.card{outline:2px solid #755497;outline-offset:3px}
+.recent-placement-tag{position:absolute;top:-8px;right:-3px;z-index:1;padding:2px 6px;border-radius:4px;background:#624681;color:#fff;font-size:11px;font-weight:700;pointer-events:none}
+.history>summary{font-size:15px;color:var(--ink)}
+#history{padding:0;margin:9px 0 0;list-style:none}
+#history .history-entry{padding:9px 10px;border-bottom:1px solid #ded7e7;border-left:2px solid transparent}
+#history .history-entry:first-child{background:#f1ebf7;border-left-color:#755497}
+.history-entry-head,.history-entry-body{display:flex;align-items:baseline;gap:8px}
+.history-entry-head{justify-content:space-between;color:var(--ink)}
+.history-number{color:var(--muted);font-variant-numeric:tabular-nums}
+.history-entry-body{margin-top:3px;color:var(--ink);font-size:13px}
+.history-kind{min-width:2em;flex:none;padding:0 5px;border-radius:4px;background:#efedf1;color:#594b66;font-size:11px}
+[data-kind="buy"] .history-kind{background:#e9def2;color:#583578}
+[data-kind="discard"] .history-kind,[data-kind="refresh"] .history-kind{background:#f6e8e9;color:#833e48}
+#history:empty::before{content:'还没有行动';color:var(--muted)}
 .market-row .leaving-market .card{outline:3px solid #a34c50;outline-offset:2px}
