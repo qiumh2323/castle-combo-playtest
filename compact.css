@@ -53,7 +53,16 @@ body.playing .site-header{height:62px}.playing .site-header .brand{font-size:17p
 .recent-placement{position:relative}
 .recent-placement>.card{outline:1px solid #755497;outline-offset:1px}
 .recent-placement-tag{position:absolute;top:-6px;right:0;z-index:1;padding:1px 5px;border-radius:4px;background:#624681;color:#fff;font-size:10px;font-weight:700;pointer-events:none}
-.game-layout>aside>.history{min-width:0;box-sizing:border-box;background:#fff;border:1px solid var(--border);border-top:3px solid #87749d;border-radius:11px;padding:12px 15px 14px}
+.game-layout>aside>.history{min-width:0;box-sizing:border-box;background:#fff;border:1px solid var(--border);border-top:3px solid #87749d;border-radius:11px;padding:12px 15px 14px;margin-top:12px}
+.market-pile{position:relative;min-width:0}
+.market-pile .deck-trigger{display:flex;align-items:center;gap:5px;padding:0;border:0;background:none;color:var(--ink);white-space:nowrap;cursor:pointer}
+.market-pile .deck-thumb{flex:none}
+.market-pile .pile-count{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.market-discard{margin-left:auto}
+.market-discard .deck-trigger{color:var(--muted);font-size:12px}
+.market-pile>.deck-inspection{display:block;visibility:hidden;opacity:0;transition:visibility 0s linear 160ms,opacity 0s linear 160ms}
+.market-pile:has(> .deck-trigger:is(:hover,:focus), > .deck-inspection:is(:hover,:focus-within))>.deck-inspection{visibility:visible;opacity:1;transition-delay:0s}
+.market-label .market-discard>.deck-inspection{left:auto;right:0;width:min(340px,75vw)}
 .history>summary{font-size:15px;color:var(--ink)}
 #history{box-sizing:border-box;max-height:224px;overflow:auto;overscroll-behavior:contain;padding:0;margin:9px 0 0;list-style:none;border:1px solid #ded7e7;border-radius:7px;background:#fff}
 #history:focus-visible{outline:2px solid #755497;outline-offset:2px}
