@@ -1,7 +1,7 @@
 {
-  "version": "V1.4",
-  "training_generation": 40,
+  "version": "V1.5",
+  "training_generation": 276,
   "verified": true,
-  "model": "assets/champion-gumbel-r0040.json",
-  "sha256": "db7bd217928f42ce4736e726b0c664110b1c8611fb69ff2427811f71102f7641"
+  "model": "assets/champion-gumbel-r0276.json",
+  "sha256": "381abb2f4e7e9b15c7c7e093ab449fb009228ddc76f5a53737843fd4baa90568"
 }
