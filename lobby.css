@@ -1,0 +1,72 @@
+/* A shared laboratory entrance, with Castle Combo's purple and gold identity.
+   Scoped to the lobby so the playing table keeps its existing dimensions. */
+body:not(.playing){background:#f7f6f3}
+body:not(.playing) .site-header{height:70px;background:#f7f6f3;border-bottom:1px solid #e4e0e8}
+body:not(.playing) main{max-width:none;padding:0 26px 34px}
+#lobby{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,420px);align-items:start;gap:0 92px;max-width:1040px;min-height:0;margin:32px auto 0}
+#lobby[hidden]{display:none}
+#lobby .intro{padding:0;min-height:0}
+.lobby-breadcrumb{display:flex;align-items:center;gap:13px;font-size:12px;line-height:1.6;color:#81808b;margin:0 0 38px}
+.lobby-breadcrumb a{color:#777080;text-decoration:none}
+.lobby-breadcrumb a:hover{text-decoration:underline}
+#lobby .intro .kicker{font-size:12px;letter-spacing:1.5px;color:#877598;margin:0 0 13px}
+#lobby .intro h1{font-size:46px;line-height:1.18;letter-spacing:-1px;color:#463452;margin:0 0 17px}
+#lobby .intro .lobby-description{font-size:14px;line-height:1.95;color:#70727e;margin:0}
+.lobby-facts{list-style:none;display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:18px 0 22px;color:#7a7185}
+.lobby-facts li{border:1px solid #ddd6e5;border-radius:4px;padding:4px 8px;font-size:12px;line-height:1.4}
+#lobby .hero-scene{height:278px;margin:0;border:1px solid #e3deeb;border-radius:65px 13px 13px 13px;background:#ece8f1;overflow:hidden;isolation:isolate}
+#lobby .hero-scene:before{inset:16px 35px;border:1px solid #ffffffa3;border-radius:50%;z-index:-1}
+#lobby .hero-scene .hero-card{left:47px;top:37px;width:126px;border:5px solid #fffdfb;border-radius:6px;transform:rotate(-13deg);box-shadow:0 8px 13px #3a285b25}
+#lobby .hero-scene .hero-card.second{left:calc(50% - 60px);top:19px;width:130px;transform:rotate(4deg);z-index:1}
+#lobby .hero-scene .hero-card.third{left:auto;right:35px;top:43px;width:124px;transform:rotate(16deg)}
+.scene-key{position:absolute;left:27px;bottom:21px;width:41px;height:41px;object-fit:contain;transform:rotate(-16deg);filter:drop-shadow(0 3px 2px #65517233);z-index:2}
+.scene-caption{position:absolute;right:20px;bottom:14px;font-size:12px;color:#8a7d97;z-index:2}
+.lobby-primer{margin-top:22px;border-top:1px solid #ded8e5;border-bottom:1px solid #ded8e5;padding:0;color:#706379}
+.lobby-primer>summary{display:flex;justify-content:space-between;gap:10px;padding:16px 0;cursor:pointer;font-size:13px;list-style:none}
+.lobby-primer>summary::-webkit-details-marker{display:none}
+.lobby-primer>summary span{font-size:15px}
+.lobby-primer[open]>summary span{transform:rotate(45deg)}
+.lobby-primer ol{margin:0;padding:0 0 5px 20px;font-size:13px;line-height:1.9}
+.lobby-primer li{padding:0 0 9px 3px}
+.lobby-primer .text-button{margin:0 0 13px;padding:0;font-size:12px}
+#lobby .setup{margin-top:38px;padding:26px;border:1px solid #e1dce7;border-radius:18px;background:#fffefa;box-shadow:0 7px 24px #42334706}
+#lobby .setup-eyebrow{margin:0 0 13px;font-size:11px;color:#95859d;letter-spacing:1px}
+#lobby .setup-heading{gap:12px}
+#lobby .setup-heading h2{font-size:25px;line-height:1.4;color:#463452}
+#lobby .setup-heading .text-button{font-size:11px;color:#8b7b95}
+#lobby .setup-description{font-size:13px;color:#82808b;line-height:1.7;margin:9px 0 21px}
+#lobby .setup>label,#lobby .setup-field-label{display:block;color:#655970;font-size:13px;margin:19px 0 9px}
+#lobby .mode-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:3px;background:#f1eef4;border-radius:7px;gap:3px}
+#lobby .mode-choices button{border:1px solid transparent;box-shadow:none;border-radius:5px;padding:8px 4px;min-height:34px;background:transparent;color:#8b8097}
+#lobby .mode-choices strong{font-size:12px;font-weight:500}
+#lobby .mode-choices [aria-checked=true]{background:#fffefa;color:#59436b;border-color:#e1d8e8;box-shadow:0 1px 3px #5d427f0b}
+#lobby #ai-settings:not([hidden]){display:block;padding:0;margin:18px 0 0;border:0}
+#lobby .setup-field-label{margin:0 0 10px}
+.difficulty-choices{display:grid;gap:8px}
+#lobby .difficulty-choice{position:relative;display:flex;align-items:center;gap:12px;min-height:84px;margin:0;padding:10px 12px;box-sizing:border-box;border:1px solid #dfd8e6;border-radius:8px;background:#fffefa;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,border-color .15s}
+.difficulty-choice input{position:absolute;width:1px;height:1px;opacity:0;left:12px;top:50%}
+#lobby .difficulty-choice:has(input:checked){border-color:#9b82ae;background:#f0eaf6;box-shadow:inset 3px 0 #9575a7}
+#lobby .difficulty-choice:has(input:focus-visible){outline:2px solid #806395;outline-offset:3px}
+#lobby .difficulty-choice:hover{border-color:#b19cbe;background:#f7f2fa}
+#lobby .difficulty-choice>img{width:54px;height:62px;flex:none;object-fit:contain}
+.difficulty-copy{display:grid;gap:7px;min-width:0}
+.difficulty-copy strong{font-size:14px;color:#51405d;font-weight:650;line-height:1.4}
+.difficulty-copy small{font-size:11px;color:#8b7e95;line-height:1.4}
+.information-badge{flex:none;margin-left:auto;padding:3px 5px;border-radius:3px;background:#efedf1;color:#8d8296;font-size:10px;white-space:nowrap}
+.difficulty-choice:has(input:checked) .information-badge{background:#e5dcec;color:#80658f}
+#lobby #ai-mode-note{font-size:11px;line-height:1.8;color:#8a8193;margin:9px 0 0}
+#lobby #first,#lobby #seed{width:100%;box-sizing:border-box;background:#fffefa;border:1px solid #ded7e6;border-radius:7px;padding:10px 12px;font-size:13px;color:#6f6578;min-height:41px}
+#lobby .advanced-settings{margin:10px 0 0;font-size:11px;color:#9c90a5}
+#lobby .advanced-settings summary{padding:4px 0}
+#lobby #start{width:100%;margin-top:16px;padding:13px 10px;min-height:47px;font-size:14px;background:#654979;border:1px solid #654979;border-radius:7px;box-shadow:none}
+#lobby #start:hover:not(:disabled){background:#523660;border-color:#523660}
+#lobby #read-file{display:block;width:fit-content;margin:13px auto 0;font-size:12px;padding:3px 5px;color:#877392;text-underline-offset:4px}
+#lobby .setup-footnote{font-size:11px;line-height:1.85;color:#9b919f;text-align:center;margin:20px 0 0}
+.lobby-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;border-top:1px solid #ded8e5;margin-top:38px;padding-top:20px;font-size:12px;color:#9a8ba3}
+.lobby-bottom a{color:inherit;text-decoration:none}
+.lobby-bottom a:hover{text-decoration:underline}
+body:not(.playing)>main+footer{max-width:1040px;padding:0 26px 28px;margin:0 auto;text-align:center;font-size:10px;color:#aaa0b0;line-height:1.8}
+@media(min-width:1600px){#lobby{margin-top:44px}.lobby-breadcrumb{margin-bottom:46px}}
+@media(max-width:1080px){#lobby{gap:0 45px;max-width:940px;grid-template-columns:minmax(0,1fr) minmax(340px,390px)}#lobby .intro h1{font-size:40px}#lobby .hero-scene .hero-card{left:23px;width:112px}#lobby .hero-scene .hero-card.second{left:calc(50% - 57px);width:120px}#lobby .hero-scene .hero-card.third{right:20px;width:108px}#lobby .hero-scene{height:260px}}
+@media(max-width:760px){body:not(.playing) main{padding:0 18px 26px}body:not(.playing) .site-header{height:62px;padding:0 18px}body:not(.playing) .site-header .brand{font-size:13px}body:not(.playing) .site-header .brand img{width:28px}body:not(.playing) .site-header>span{font-size:11px;padding-left:10px}body:not(.playing) .site-header small{font-size:10px}#lobby{max-width:470px;grid-template-columns:minmax(0,1fr);gap:0;margin:24px auto 0}.lobby-breadcrumb{margin-bottom:25px;font-size:11px}#lobby .intro h1{font-size:36px}#lobby .intro .lobby-description{font-size:13px}#lobby .hero-scene{height:234px;border-radius:45px 11px 11px 11px}#lobby .hero-scene .hero-card{left:28px;top:31px;width:103px}#lobby .hero-scene .hero-card.second{left:calc(50% - 56px);top:16px;width:112px}#lobby .hero-scene .hero-card.third{right:25px;top:34px;width:103px}.scene-key{width:32px;height:32px;left:20px;bottom:15px}.scene-caption{font-size:10px;right:14px;bottom:12px}.lobby-facts{margin:14px 0 18px}.lobby-primer{margin-top:18px}.lobby-primer>summary{font-size:12px;padding:13px 0}#lobby .setup{margin-top:26px;padding:24px 20px;border-radius:14px}#lobby .setup-description{margin-bottom:18px}.lobby-bottom{margin-top:28px;padding-top:18px;font-size:10px}body:not(.playing)>main+footer{padding:0 18px 24px}}
+@media(prefers-reduced-motion:reduce){#lobby *{transition:none!important}}
