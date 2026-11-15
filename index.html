@@ -1,42 +1,36 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>城堡嘉年华 · 路克球的桌游实验室</title><link rel="icon" href="assets/lab-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=2"><link rel="stylesheet" href="polish.css?v=2"><link rel="stylesheet" href="preview.css?v=7"><link rel="stylesheet" href="compact.css?v=46"><link rel="stylesheet" href="lobby.css?v=1"></head><body>
-<header class="site-header"><a class="brand" href="./"><img src="assets/lab-mark.svg" alt="">路克球的桌游实验室</a><span>城堡嘉年华 <small>独立测试 · V1.5</small></span></header>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>城堡嘉年华 · 路克球的桌游实验室</title><link rel="icon" href="assets/lab-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=2"><link rel="stylesheet" href="polish.css?v=2"><link rel="stylesheet" href="preview.css?v=7"><link rel="stylesheet" href="compact.css?v=46"><link rel="stylesheet" href="lobby.css?v=2"></head><body>
+<header class="site-header game-header"><a class="lab-home-link" href="https://qiumh2323.github.io/boardgame-lab/#experiments"><img src="assets/lab-mark.svg" alt=""><span>路克球的桌游实验室<small>← 返回桌游展架</small></span></a><div class="game-header-right"><span class="header-game-title">城堡嘉年华</span><span id="version">V1.5</span></div></header>
 <main>
- <section id="lobby" class="lobby">
-  <div class="intro">
-   <p class="lobby-breadcrumb"><a href="https://qiumh2323.github.io/boardgame-lab/">桌游展架</a><span>/</span>城堡嘉年华</p>
-   <p class="kicker">CASTLE COMBO</p><h1>城堡嘉年华</h1>
-   <p class="lobby-description">从城堡与村庄招募角色，拼出你的九宫格。<br>金币、钥匙与徽章，九张牌也能有大文章。</p>
-   <ul class="lobby-facts" aria-label="游戏概览"><li>2 人对战</li><li>3 × 3 阵列</li><li>三个难度</li></ul>
-   <div class="hero-scene" aria-label="城堡与村庄的角色卡牌">
-    <img class="hero-card" src="assets/card-31.jpg" alt="城堡角色牌"><img class="hero-card second" src="assets/card-121.jpg" alt="村庄角色牌"><img class="hero-card third" src="assets/card-20.jpg" alt="城堡角色牌">
-    <img class="scene-key" src="assets/key.png" alt=""><span class="scene-caption">九个位置，留给你的小城。</span>
+ <section id="lobby" aria-labelledby="lobby-title">
+  <nav class="lobby-breadcrumb" aria-label="当前位置"><a href="https://qiumh2323.github.io/boardgame-lab/#experiments">桌游展架</a><span aria-hidden="true">/</span><span>城堡嘉年华</span></nav>
+  <div class="lobby-layout"><section class="lobby-story">
+   <p class="lobby-kicker">CASTLE COMBO</p><h1 id="lobby-title">城堡嘉年华</h1>
+   <p class="lobby-intro">从城堡与村庄招募角色，拼出你的九宫格。<br>金币、钥匙与徽章，九张牌也能有大文章。</p>
+   <div class="lobby-tags"><span>你 vs AI</span><span>3 × 3 阵列</span><span>三个难度</span></div>
+   <div class="lobby-art" aria-label="城堡与村庄的角色卡牌"><span class="lobby-art-ring"></span>
+    <img class="lobby-card back" src="assets/back-1.jpg" alt="城堡牌背"><img class="lobby-card front" src="assets/card-121.jpg" alt="村庄角色牌"><img class="lobby-card rare" src="assets/card-20.jpg" alt="城堡角色牌">
+    <img class="lobby-ball" src="assets/key.png" alt="钥匙"><span class="lobby-art-note">牌已备好，只差你入座。</span>
    </div>
-   <details class="lobby-primer"><summary>第一次玩？看一分钟开局提示<span aria-hidden="true">＋</span></summary><ol><li>从信使所在的城堡或村庄挑选角色，支付金币招募；钥匙可用来移信使或刷新。</li><li>把新角色放在已有角色的上下左右，阵列最多 3 × 3。也可背面放置，补充金币和钥匙。</li><li>留意徽章、位置与钱袋的计分条件，双方各放满九张后比较总分。</li></ol><button class="text-button" data-open-rules>查看完整玩法</button></details>
-  </div>
-  <section class="setup" aria-labelledby="setup-title">
-   <p class="setup-eyebrow">你的座位已留好</p>
-   <div class="setup-heading"><h2 id="setup-title">准备一局</h2><button class="text-button" data-open-rules>玩法速览</button></div>
-   <p class="setup-description">选好对手与先手，入座就开玩。</p>
-   <label id="mode-label" for="mode">谁来入座</label>
-   <div class="mode-choices" role="radiogroup" aria-labelledby="mode-label"><button data-mode="pve" role="radio" aria-checked="true"><strong>人机对战</strong></button><button data-mode="pvp" role="radio" aria-checked="false"><strong>双人热座</strong></button><button data-mode="eve" role="radio" aria-checked="false"><strong>电脑观战</strong></button></div>
-   <select id="mode" hidden><option value="pve">你 vs 电脑</option><option value="pvp">本地双人热座</option><option value="eve">电脑 vs 电脑 · 观察</option></select>
-   <div id="ai-settings">
-    <span id="difficulty-label" class="setup-field-label">选择电脑难度</span>
-    <select id="ai" hidden aria-label="电脑难度"><option value="blue">简单</option><option value="green" selected>中等难度</option><option value="red">令人发狂</option></select>
-    <div class="difficulty-choices" role="radiogroup" aria-labelledby="difficulty-label">
-     <label class="difficulty-choice"><input type="radio" name="difficulty" value="blue"><img src="assets/avatar-page.webp" alt="见习侍从" width="60" height="68"><span class="difficulty-copy"><strong>简单</strong><small>见习侍从 · 轻松上手</small></span><span class="information-badge">标准信息</span></label>
-     <label class="difficulty-choice"><input type="radio" name="difficulty" value="green" checked><img src="assets/avatar-steward.webp" alt="行会管家" width="60" height="68"><span class="difficulty-copy"><strong>中等难度</strong><small>行会管家 · 认真切磋</small></span><span class="information-badge">标准信息</span></label>
-     <label class="difficulty-choice"><input type="radio" name="difficulty" value="red"><img src="assets/avatar-strategist.webp" alt="王廷谋士" width="60" height="68"><span class="difficulty-copy"><strong>令人发狂</strong><small>王廷谋士 · 深度挑战</small></span><span class="information-badge">公开信息</span></label>
-    </div>
-    <p id="ai-mode-note" class="small" aria-live="polite">标准信息：电脑不知道真实牌库顺序。</p>
+   <details class="quick-guide"><summary>第一次玩？看一分钟开局提示 <span aria-hidden="true">＋</span></summary><ol><li><strong>从信使所在的展示列招募：</strong>花费金币拿一张角色牌；钥匙可移信使或刷新。</li><li><strong>用九张牌拼成阵列：</strong>新牌需与已有角色上下左右相邻，阵列最多 3 × 3。</li><li><strong>留意徽章与组合计分：</strong>位置、徽章、折扣和钱袋都可能带来收益。</li><li><strong>双方放满九张后结算：</strong>每张角色按条件计分，剩余钥匙也计分。</li></ol><button class="text-button" data-open-rules>查看完整玩法</button></details>
+  </section><section id="lobby-settings" aria-label="对战准备"><section class="settings" aria-labelledby="setup-title">
+   <div class="setup-eyebrow">SET YOUR TABLE</div><div class="panel-title"><h2 id="setup-title">准备一局</h2></div>
+   <p class="setup-intro">选好对手与先手，入座就开玩。</p>
+   <label id="difficulty-label-setup">选择电脑难度</label>
+   <select id="ai" hidden aria-label="电脑难度"><option value="blue" selected>简单</option><option value="green">中等难度</option><option value="red">令人发狂</option></select>
+   <div class="difficulty-options" role="radiogroup" aria-labelledby="difficulty-label-setup">
+    <button class="difficulty-choice" role="radio" aria-checked="true" data-difficulty="blue"><img class="difficulty-portrait" src="assets/avatar-page.webp" alt="" width="64" height="64" decoding="async"><span><strong>简单</strong><small>轻松上手</small></span><em>正常信息</em></button>
+    <button class="difficulty-choice" role="radio" aria-checked="false" data-difficulty="green"><img class="difficulty-portrait" src="assets/avatar-steward.webp" alt="" width="64" height="64" decoding="async"><span><strong>中等难度</strong><small>认真切磋</small></span><em>正常信息</em></button>
+    <button class="difficulty-choice" role="radio" aria-checked="false" data-difficulty="red"><img class="difficulty-portrait" src="assets/avatar-strategist.webp" alt="" width="64" height="64" decoding="async"><span><strong>令人发狂</strong><small>深度挑战 · 思考可能更久</small></span><em>公开信息</em></button>
    </div>
-   <label for="first">谁先手</label><select id="first"><option value="random">随机决定</option><option value="1">玩家一 / 你</option><option value="2">玩家二 / 电脑</option></select>
-   <details class="advanced-settings"><summary>自定义开局</summary><label for="seed">随机种子（可留空）</label><input id="seed" type="text" inputmode="numeric" placeholder="相同种子用于复现开局"></details>
-   <button id="start" class="primary">开始对战</button><button id="read-file" class="text-button">读取对局纪录</button><input id="file" type="file" accept="application/json,.json" hidden>
-   <p class="setup-footnote">首次开局会准备对战引擎和 AI 模型。<br>完整对局结束后，可保存文件并随时回放。</p>
-  </section>
-  <div class="lobby-bottom"><span>胜负留在桌上，好奇心带走。</span><a href="https://qiumh2323.github.io/boardgame-lab/">返回桌游展架 ↗</a></div>
+   <p id="ai-mode-note" class="setting-help" aria-live="polite">双方遵循正常信息范围，适合先熟悉规则与操作。</p>
+   <label for="first">谁先手</label><select id="first"><option value="random" selected>随机决定</option><option value="1">我先手</option><option value="2">电脑先手</option></select>
+   <input id="seed" type="hidden" value="">
+   <button id="start" class="primary" disabled>准备中 1/2 · 加载对战引擎…</button><button id="read-file" class="replay-import-link">读取对局纪录 ↗</button><input id="file" type="file" accept="application/json,.json" hidden>
+   <div class="engine-state" role="status" aria-live="polite"><span id="engine-indicator" class="engine-indicator loading"></span><span id="load-state">正在准备对战引擎…</span></div>
+   <button id="retry-load" class="text-button" hidden>重新加载引擎</button><p class="fine" id="runtime">首次使用需下载文件；再次打开可能读取浏览器缓存，但仍需初始化。</p>
+  </section></section></div>
+  <p class="lobby-bottom-note">完整结束后可保存对局文件；在开始对战下方读取文件，即可回看整场行动。</p>
  </section>
  <section id="table" hidden><div class="table-toolbar"><div><h1>城堡嘉年华</h1><p id="turn" role="status" aria-live="polite"></p></div><div class="toolbar-buttons"><button id="rules">规则速览</button><button id="pause-ai" hidden>暂停观战</button><button id="undo">撤回上次行动</button><button id="new">返回准备</button></div></div>
  <div id="replay-controls" class="replay-controls" hidden><button id="prev">上一步</button><button id="play">播放</button><input id="step" type="range" min="0" value="0" step="1" aria-label="回放行动位置"><span id="position"></span><button id="next">下一步</button><button id="exit-replay">返回终局</button></div>
@@ -44,9 +38,9 @@
  <aside><section id="player-dock" class="player-dock" aria-label="双方分数与资源"></section><section class="decision"><nav class="action-flow" aria-label="招募步骤"><span data-flow="card">选角色</span><span aria-hidden="true">›</span><span data-flow="position">选位置</span><span aria-hidden="true">›</span><span data-flow="confirm">确认</span></nav><span class="kicker" id="phase">选择行动</span><h2 id="decision-title">从广场挑选一张牌</h2><p id="guidance">选择卡牌，再选择合法位置。</p><div id="ai-thinking" class="ai-thinking" hidden><progress id="thinking-progress" max="1" value="0" aria-label="电脑思考进度"></progress><span id="thinking-time">0.0 秒</span></div><p id="ai-error" class="ai-error" hidden role="alert"></p><button id="retry-ai" class="primary" hidden>重试电脑行动</button><button id="save-diagnostic" class="text-button" hidden>保存问题记录</button><div id="chosen-info"></div><label class="flip-option" title="免费背面放置，占一个位置；无徽章、能力和角色分数。"><input id="flip" type="checkbox">背面放置（+6 金币、+2 钥匙）</label><div id="special-actions"></div><p id="selection" role="status"></p><div class="confirm-row"><button id="confirm" class="primary" disabled>请先选择行动</button></div><div id="end-tools" hidden><button id="save">保存对局文件</button><button id="watch">查看本局回放</button></div><p id="notice" class="small">悬浮或点击牌名查看说明</p><details class="undo-help"><summary>撤回规则 · Ctrl+Z</summary><p id="undo-state"></p><ul><li>未确认：取消选择，不改变资源。</li><li>已确认：只可撤回当前回合内未揭示新信息的操作；移动信使与钥匙消耗整组恢复。</li><li>刷新、弃置或翻出新牌后不可撤回；回合交给对手后不可倒退。</li><li>计算中、观战、回放及已读取的对局不可撤回；不能跨新局恢复。</li></ul></details></section><details class="history" open><summary>行动记录</summary><ol id="history" tabindex="0" aria-label="行动记录列表"></ol></details></aside></div></section>
  <p id="error" role="alert" hidden></p>
 </main>
-<footer>测试版 · 尚未完成逐张牌面独立复核 · 规则实现来源 Game Park / ISC · 卡面版权归 Catch Up Games 等权利人所有 · <a href="rules-en.pdf" target="_blank" rel="noopener">原版规则书</a></footer>
+<footer class="game-footer"><a class="lab-home-link" href="https://qiumh2323.github.io/boardgame-lab/#experiments">← 桌游展架</a><span>胜负留在桌上，好奇心带走。</span></footer>
 <dialog id="detail"><div class="dialog-head"><h2 id="detail-name"></h2><button data-close="detail" aria-label="关闭卡牌详情">关闭</button></div><div class="detail-body"><div class="detail-card"><img id="detail-image" alt=""></div><div id="detail-text"></div></div></dialog>
-<dialog id="rules-dialog"><div class="dialog-head"><h2>九张牌的聚会</h2><button data-close="rules-dialog">关闭</button></div><ol class="rule-list"><li>每人起始 15 金币、2 钥匙。信使从村庄出发；两列各展示 3 张牌。</li><li>回合开始可花费 1 钥匙：将信使移到另一列，或弃置并补满当前列。正常招募只能来自信使所在列。</li><li>选择一张牌并支付扣除永久折扣后的费用，然后与已有牌上下左右相邻放置，整体不得超过 3×3。首次放置的牌不固定为最终左上角，可继续向上、向左扩展。</li><li>也可免费将所选牌背面放置，获得 6 金币与 2 钥匙；该牌占据位置，但没有正面徽章、能力与计分。</li><li>正面放置后结算能力，必要时选择二选一效果或弃置展示牌，再按信使图标移动信使，补满展示区。折扣一直生效，钱袋上的金币与可花费金币分开。</li><li>双方各放满 9 张牌后结算：每张牌按自身条件计分；剩余金币自动填入钱袋（不同钱袋牌基础版均每币2分），每把剩余钥匙另得1分。总分相同以未入钱袋的金币比较，仍同则平局。</li><li>游戏中显示的是按当前阵列计算的暂时分数，会随放置位置和组合变化。详情里的九宫格位置条件以最终阵列为准。</li></ol><p>此版为基础规则，不启用地牢扩展。中文牌名与说明为本地译文，不是官方中文印刷牌面。</p></dialog>
+<dialog id="rules-dialog"><div class="dialog-head"><h2>九张牌的聚会</h2><button data-close="rules-dialog">关闭</button></div><ol class="rule-list"><li>每人起始 15 金币、2 钥匙。信使从村庄出发；两列各展示 3 张牌。</li><li>回合开始可花费 1 钥匙：将信使移到另一列，或弃置并补满当前列。正常招募只能来自信使所在列。</li><li>选择一张牌并支付扣除永久折扣后的费用，然后与已有牌上下左右相邻放置，整体不得超过 3×3。首次放置的牌不固定为最终左上角，可继续向上、向左扩展。</li><li>也可免费将所选牌背面放置，获得 6 金币与 2 钥匙；该牌占据位置，但没有正面徽章、能力与计分。</li><li>正面放置后结算能力，必要时选择二选一效果或弃置展示牌，再按信使图标移动信使，补满展示区。折扣一直生效，钱袋上的金币与可花费金币分开。</li><li>双方各放满 9 张牌后结算：每张牌按自身条件计分；剩余金币自动填入钱袋（不同钱袋牌基础版均每币2分），每把剩余钥匙另得1分。总分相同以未入钱袋的金币比较，仍同则平局。</li><li>游戏中显示的是按当前阵列计算的暂时分数，会随放置位置和组合变化。详情里的九宫格位置条件以最终阵列为准。</li></ol><p>此版为基础规则，不启用地牢扩展。中文牌名与说明为本地译文，不是官方中文印刷牌面。</p><p>规则实现来源 Game Park / ISC；卡面版权归 Catch Up Games 等权利人所有。<a href="rules-en.pdf" target="_blank" rel="noopener">原版规则书</a></p></dialog>
 <dialog id="result"><div class="dialog-head"><h2>聚会散场，算算人情。</h2><button data-close="result">返回棋盘</button></div><div id="result-data"></div><div class="result-buttons"><button id="result-save">保存对局文件</button><button id="result-watch" class="primary">查看本局回放</button></div></dialog>
 <dialog id="leave"><h2>返回准备页面？</h2><p>当前棋盘仍会保留，开始新对局才会替换。未结束的对局不能导出完整回放。</p><div class="result-buttons"><button data-close="leave">继续本局</button><button id="leave-confirm">返回准备</button></div></dialog>
-<section id="mobile-dock" class="mobile-dock" hidden aria-label="行动快捷确认"><div><strong id="mobile-step">选择角色</strong><small id="mobile-selection"></small></div><button id="mobile-options">选项</button><button id="mobile-clear" aria-label="取消当前选择">取消</button><button id="mobile-confirm" class="primary" disabled>确认</button></section><div id="zoom" hidden aria-hidden="true"><div class="preview-card"><img alt=""></div><section class="preview-explanation"></section></div><script type="module" src="app.js?v=51"></script></body></html>
+<section id="mobile-dock" class="mobile-dock" hidden aria-label="行动快捷确认"><div><strong id="mobile-step">选择角色</strong><small id="mobile-selection"></small></div><button id="mobile-options">选项</button><button id="mobile-clear" aria-label="取消当前选择">取消</button><button id="mobile-confirm" class="primary" disabled>确认</button></section><div id="zoom" hidden aria-hidden="true"><div class="preview-card"><img alt=""></div><section class="preview-explanation"></section></div><script type="module" src="app.js?v=52"></script></body></html>
